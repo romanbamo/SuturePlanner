@@ -1,0 +1,27 @@
+# =========================================================================
+# DATASET CONFIGURATION: PHASE 1 PRE-TRAINING (GENERAL WOUNDS)
+# =========================================================================
+# Responsibility: 
+#   Defines workspace paths, split configurations, and class mappings 
+#   required for transfer learning on structural general tissue injuries.
+#
+# Usage Note:
+#   Modify the 'path' key placeholder below to point to your target local 
+#   or absolute environment directory before initializing model training.
+# =========================================================================
+
+# PRE-CONDITION: 
+#   - Target path directory must exist and contain 'images/train', 'images/val', 
+#     'labels/train', and 'labels/val' sub-folders.
+#   - Image labels must follow the strict standard normalized YOLO txt bounding box/polygon format.
+# POST-CONDITION: 
+#   - Maps valid local image slices to class index 0 during bounding box or segmentation training passes.
+
+# TODO: Replace with your specific local or absolute environment dataset path
+path: path/to/Dataset/General_Wounds_DataSet
+
+train: images/train
+val: images/val
+
+names:
+  0: wound

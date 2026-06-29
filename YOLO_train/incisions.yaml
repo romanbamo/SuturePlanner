@@ -1,0 +1,33 @@
+# =========================================================================
+# DATASET CONFIGURATION: PHASE 2 FINE-TUNING & EXTERNAL VALIDATION
+# =========================================================================
+# Responsibility:
+#   Defines workspace paths, cross-validation splits, and out-of-distribution 
+#   testing locations required for specialized surgical incision model fine-tuning 
+#   and validation audits.
+#
+# Usage Note:
+#   Modify the 'path' and 'test' keys below to point to your target local 
+#   or absolute environment directories before initializing model training.
+# =========================================================================
+
+# PRE-CONDITION:
+#   - Root 'path' directory must contain valid 'images/train', 'images/val', 
+#     'labels/train', and 'labels/val' matching subsets.
+#   - Explicit 'test' key must point to a separate, unseen independent 
+#     image partition containing corresponding normalized ground truth polygon text files.
+# POST-CONDITION:
+#   - Overrides general tissue weights to map specific incision coordinates 
+#     exclusively to class index 0 during specialized semantic evaluation.
+
+# TODO: Replace with your specific absolute workspace parent directory
+path: path/to/Dataset/Incisions_DataSet
+
+train: images/train
+val: images/val
+
+# TODO: Replace with your specific independent external verification dataset folder route
+test: path/to/Dataset/Validation_DataSet/images
+
+names:
+  0: incision
